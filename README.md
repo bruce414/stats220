@@ -14,6 +14,6 @@ A little about me:
 2. My favourite idol is Cristiano Ronaldo, a little about him [Cristiano Ronaldo Offical Website](https://www.cristianoronaldo.com/#cr7).
 3. I enjoying _taking pictures_ of the little details in life
 
-A meme that captures how I currently feel about my university studies is ![](src="https://www.icegif.com/wp-content/uploads/2023/04/icegif-1724.gif")
+A meme that captures how I currently feel about my university studies is ![](https://www.icegif.com/wp-content/uploads/2023/04/icegif-1724.gif)
 
 
