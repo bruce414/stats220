@@ -51,7 +51,8 @@ library(magick)
 Load the csv file, and assign it to an object called logged_data:
 ```{r echo = T, results='hide'}
 
-csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vQpMQvmWiKBQwIKecKDuRBZyhaHCpfOw-0hyIHEuD849GazihA4DT1w0W_WCc_Y3hsojdDaNbd6mJpW/pub?gid=1765259499&single=true&output=csv"
+csv_file <- ""https://docs.google.com/spreadsheets/d/e/2PACX-1vQpMQvmWiKBQwIKecKDuRBZyhaHCpfOw-0hyIHEuD849GazihA4DT1w0W_WCc_Y3hsojdDaNbd6mJpW/pub?gid=1765259499&single=true&output=csv"
+"
 
 logged_data <- read_csv(csv_file)
 
