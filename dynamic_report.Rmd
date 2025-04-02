@@ -116,7 +116,4 @@ ggplot(data = latest_data) +
   geom_bar(aes(x = total_time_per_day))
 ```
 
-```{r file='exploration.R', eval=FALSE, echo=TRUE}
-
-```
 
