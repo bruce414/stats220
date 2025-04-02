@@ -70,17 +70,6 @@ Let's then look at some bar charts
 
 So the first bar chart is about the most popular category of course. After briefly touched on this topic previously, let's now make a bar chart about it so that we can better visualize the data!!!
 
-```{r}
-#plot no.1 x = video_categories
-ggplot(data = latest_data) +
-  geom_bar(aes(x = video_categories))
-```
 
-And the second bar chart is about the total time the partcipants usually spend on youtube:
-```{r}
-#plot no.2 x = total_time_spent_daily
-ggplot(data = latest_data) +
-  geom_bar(aes(x = total_time_per_day))
-```
 
 
