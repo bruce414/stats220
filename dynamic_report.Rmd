@@ -43,19 +43,45 @@ p {
 In this report, I will mainly focus on exploring peoples behaviour and preference while browsing and watching youtube videos
 
 Firstly, let's load some necessary packages to get us started:
-
+```{r echo = T, results='hide'}
+library(tidyverse)
+library(magick)
+```
 
 Load the csv file, and assign it to an object called logged_data:
+```{r echo = T, results='hide'}
 
+csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vQpMQvmWiKBQwIKecKDuRBZyhaHCpfOw-0hyIHEuD849GazihA4DT1w0W_WCc_Y3hsojdDaNbd6mJpW/pub?gid=1765259499&single=true&output=csv"
+
+logged_data <- read_csv(csv_file)
+
+```
 
 Rename the object *logged_data* to *latest_data* and rename the columns:
+```{r echo = T, results='hide'}
 
+latest_data <- logged_data %>%
+  rename(video_categories = 2,
+         total_time_per_day = 3,
+         factors = 4,
+         experience = 5,
+         rating = 6)
+
+glimpse(latest_data)
+```
 
 Now since we have loaded all the data and created the data frame successfully. Let's start exploring by looking at the most popular video category people have chosen:
 So in the survey, I listed 16 different categories that I believe are some of the most popular ones, and we will pick the most popular one out of these 16 categories.
 
 And the R code snippet is as follows:
 
+```{r echo = T, results='hide'}
+
+most_popular_category <- latest_data %>%
+  count(video_categories, sort = TRUE) %>%  # Count occurrences and sort in descending order
+  slice(1)  # Get the top category
+most_popular_category
+```
 
 The result we got after running the code above is "sport", which means the sport is the most popular category people like to watch
 
@@ -63,6 +89,13 @@ The second one is about what would people rate about their experience on youtube
 
 Here's the R code snippet:
 
+```{r echo = T, results='hide'}
+
+ratings <- latest_data %>%
+  select(rating)
+highest_rating <- max(ratings)
+highest_rating
+```
 
 The result is 10, which means most people who took part of this survey are very satisfied with the service that youtube is currenty providing.
 
@@ -70,6 +103,17 @@ Let's then look at some bar charts
 
 So the first bar chart is about the most popular category of course. After briefly touched on this topic previously, let's now make a bar chart about it so that we can better visualize the data!!!
 
+```{r}
+#plot no.1 x = video_categories
+ggplot(data = latest_data) +
+  geom_bar(aes(x = video_categories))
+```
 
+And the second bar chart is about the total time the partcipants usually spend on youtube:
+```{r}
+#plot no.2 x = total_time_spent_daily
+ggplot(data = latest_data) +
+  geom_bar(aes(x = total_time_per_day))
+```
 
 
