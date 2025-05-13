@@ -1,0 +1,57 @@
+---
+title: My visual data story to analyse the viewers' viewing behavirour and preference
+output: html_document
+---
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{js}
+$(function() {
+  $(".level2").css('visibility', 'hidden');
+  $(".level2").first().css('visibility', 'visible');
+  $(".container-fluid").height($(".container-fluid").height() + 300);
+  $(window).on('scroll', function() {
+    $('h2').each(function() {
+      var h2Top = $(this).offset().top - $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (h2Top >= 0 && h2Top <= windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'visible');
+      } else if (h2Top > windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'hidden');
+      }
+    });
+  });
+})
+```
+
+```{css}
+.figcaption {display: none}
+```
+
+## Plot 1 --- compare if spend more time on youtube daily usually indicate a higher rating
+
+![plot no.1](plot1.png)
+
+In my first plot, what I intend to compare is that whether the time spent daily on youtube have an impact on viewers' final ratings. So basically, the more time spent on youtube indicates a higher rating, and vice versa. From the data I collected, this is not always the case. For example, the people who spent 0.25, which is roughly below 30 mins on youtube daily have an average rating of 6.8, and the people who spent 0.5, which roughly is 30mins ~ 1 hour have an average rating of 7.63. However, the people who spent 0.75 (1 hour to 2 hours) daily have an average rating (7.3) that is below the people who spend less hours on youtube daily. This can be cause by various reasons, such as some people are just addicated to watching ads, or they just spend countless hours scrolling through youtube contents or their feeds to see if they can find any contents that interest them. 
+
+
+## Plot 2 --- average rating by category
+![plot no.2](plot2.png)
+
+In my second plot, what I intend to compare is that if different categories of videos can impact the overall rating. From the plot above, we can see a trend that the most popular categories to watch on youtube are product reviews, cooking, and sports, each with a rating of 9.3, 9.3, and 8.7 respectively; whereas the categories of videos that are least attracted to people are tutorials, music, each with a rating of 4.7 and 6.8 respectively. 
+
+
+## Plot 3 --- Between the two datasets, how many people click to watch the video because of the creators that they follow
+![plot no.3](plot3.png)
+In my thrid plot, I intend to discover between the two datasets (because I collected the data over a period of two different days, 01/04/2025 and 12/05/2025), how many people click the videos to watch because its uploaded by their followed creators. So between the two days that I collected the data, 9 people clicked the video because of their followed creators from the dataset that I collected on 01/04, whereas only 6 people clicked the video because of their followed creators from the dataset that I collected on 12/04.
+
+
+
+
+
+
+
